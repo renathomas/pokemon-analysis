@@ -94,6 +94,7 @@ const PokemonTypeChart = () => {
     const { signal } = controller;
 
     const fetchData = async () => {
+      setLoading(true);
       try {
         const pokemonList = await fetchPokemonList(signal);
         const filtered = pokemonList.filter((pokemon: PokemonResponse) =>
